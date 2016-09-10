@@ -72,15 +72,15 @@ public class Systeme {
         
                 switch (choixDuBot) {
                     case 1:
-                        leJoueur.strategie = new ChoixAleatoire(leJoueur);
+                        leJoueur.strategie = new ChoixAleatoire();
                         break;
         
                     case 2:
-                        leJoueur.strategie = new ChoixCyclique(leJoueur);
+                        leJoueur.strategie = new ChoixCyclique();
                         break;
         
                     default:
-                        leJoueur.strategie = new ChoixIdentique(leJoueur);
+                        leJoueur.strategie = new ChoixIdentique();
                         break;
                 }
                 
@@ -91,7 +91,7 @@ public class Systeme {
             else
             {
                 System.out.println("Ce joueur est un humain");
-                leJoueur.strategie = new SaisieClavier(leJoueur);
+                leJoueur.strategie = new SaisieClavier();
                 
                 // Demander le nom
                 System.out.println("Saisissez votre nom: ");

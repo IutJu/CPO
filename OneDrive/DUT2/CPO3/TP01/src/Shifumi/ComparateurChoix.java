@@ -15,4 +15,9 @@ public class ComparateurChoix implements Comparator {
         }
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
