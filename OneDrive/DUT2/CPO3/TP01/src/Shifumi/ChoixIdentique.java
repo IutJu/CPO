@@ -6,6 +6,10 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 public class ChoixIdentique implements Strategie {
 
     @objid ("7b00759d-c75b-4bfa-963b-df9c7106fc79")
+    @Override
+    /**
+     * Choisir toujours cieaux
+     */
     public Choix DemarrerCoup() {
         return Choix.CISEAUX;
     }

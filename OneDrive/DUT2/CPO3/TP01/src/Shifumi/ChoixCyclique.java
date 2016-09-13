@@ -9,6 +9,9 @@ public class ChoixCyclique implements Strategie {
     
     @objid ("f46c27a8-e595-4918-b111-1c5712482743")
     @Override
+    /**
+     * Choisir un choix en fonction du choix precedent. Default: CISEAUX
+     */
     public Choix DemarrerCoup() {
         if(sonChoixPrecedent == Choix.CISEAUX)
             return Choix.PAPIER;

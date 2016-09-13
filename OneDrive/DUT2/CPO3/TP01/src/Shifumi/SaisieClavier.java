@@ -6,11 +6,13 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 @objid ("79311702-dcf1-4e03-ba29-6c297b1fffcf")
 public class SaisieClavier implements Strategie {
         
-    @objid ("eb9f9aa0-1b0b-40c9-bd53-c964bed2a345")
-    public Scanner scanner;
-
     @objid ("00648ce5-a756-4541-b0bd-58752e2897aa")
     @Override
+    /**
+     * Demander au joueur(humain) a entrer un choix
+     * @return un choix
+     * @link Choix
+     */
     public Choix DemarrerCoup() {
         
         int sonChoix = 0;

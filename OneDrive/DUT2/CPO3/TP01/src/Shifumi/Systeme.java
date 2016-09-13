@@ -6,6 +6,9 @@ import java.util.Scanner;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("c27fecff-36ba-4036-b116-72619f67198f")
+/**
+ * Le system gere le deroulement du jeu. Il demarre les parties, affecter les points, determiner et annoncer le gagnant
+ */
 public class Systeme {
     @objid ("a811842f-c702-4613-a706-445082a3721c")
     private Integer nbTours;
@@ -20,34 +23,31 @@ public class Systeme {
      * Le comparateur qui permet de comparer le choix des joueurs puis affecter les score
      */
     @objid ("b402c1bb-29ba-45ad-972f-bc01f5510cec")
-    public ComparateurChoix comparateurChoix;
-
-    @objid ("3d0dd2e5-2505-498c-95f7-e77fa0fe89f8")
-    public Integer getNbTours() {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        return this.nbTours;
-    }
-
-    @objid ("9b3e12dc-336c-48cd-86e5-c608ebb87ec4")
-    public void setNbTours(final Integer value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.nbTours = value;
-    }
+    public ComparateurChoix comparateurChoix = new ComparateurChoix();
 
     @objid ("4c135483-1478-4b52-8fd7-5eca7f98f407")
+    /**
+     * Annoncer le resultat final du jeu
+     */
     public void annoncerGagnant() {
         int leScoreP1 = this.player.get(0).getScore();
         int leScoreP2 = this.player.get(1).getScore();
         
+        System.out.println("Joueur "+this.player.get(0).getNom()+" remporte "+Integer.toString(leScoreP1)+" points");
+        System.out.println("Joueur "+this.player.get(1).getNom()+" remporte "+Integer.toString(leScoreP2)+" points");
+        
         if(leScoreP1 > leScoreP2)
-            System.out.println(this.player.get(0).getNom()+ "emerge victorieux!");
+            System.out.println(this.player.get(0).getNom()+ " emerge victorieux!");
         else if(leScoreP1 < leScoreP2)
-            System.out.println(this.player.get(1).getNom()+ "emerge victorieux!");
+            System.out.println(this.player.get(1).getNom()+ " emerge victorieux!");
         else
             System.out.println("It is a draw!");
     }
 
     @objid ("1c4f0a5c-a455-40f8-9927-bede541ab2b9")
+    /**
+     * Demarrer le jeu. Tous les fonctionalites du jeu se trouvent ici
+     */
     public void demarrerJeu() {
         //Demander une strategie pour chaque joueur              
         for (int i = 0; i < 2; i++) {
@@ -100,6 +100,11 @@ public class Systeme {
             }
         }
         
+        // Demander le nombre de tours
+        System.out.println("Combien de tours?");
+        Scanner reader = new Scanner(System.in);
+        this.nbTours = reader.nextInt();
+        
         // Demarrer les tours
         for(int j = 0; j < this.nbTours; j++)
         {
@@ -110,7 +115,17 @@ public class Systeme {
             }
             
             // Comparer le choix et affecter le score des joueur
-            this.comparateurChoix.comparerChoix(this.player.get(0).choix, this.player.get(1).choix);      
+            System.out.println("Joueur "+this.player.get(0).getNom()+" joue "+this.player.get(0).choix.name());
+            System.out.println("Joueur "+this.player.get(1).getNom()+" joue "+this.player.get(1).choix.name());
+            
+            int leGagnant = this.comparateurChoix.comparerChoix(this.player.get(0).choix, this.player.get(1).choix);    
+            if(leGagnant == 2)
+                System.out.println("Match nul");
+            else
+            {
+                this.player.get(leGagnant).setScore(this.player.get(leGagnant).getScore()+1);
+                System.out.println(this.player.get(leGagnant).getNom()+" gagne");
+            }
         }
         this.annoncerGagnant();
     }
