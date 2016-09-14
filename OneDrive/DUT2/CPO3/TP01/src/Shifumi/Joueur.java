@@ -3,6 +3,9 @@ package Shifumi;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("61839994-e1cc-4520-b782-6e5cbea4e285")
+/**
+ * Un joueur participe au jeu et peut etre bot ou humain
+ */
 public class Joueur {
     @objid ("88a0caab-ed59-46d7-8dd0-bb22341156a9")
     /**

@@ -4,6 +4,9 @@ import java.util.Scanner;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("79311702-dcf1-4e03-ba29-6c297b1fffcf")
+/**
+ * Il s'agit d'une strategie du joueur humain, qui consiste a prendre un choix saisi par le joueur via le clavier.
+ */
 public class SaisieClavier implements Strategie {
         
     @objid ("00648ce5-a756-4541-b0bd-58752e2897aa")
