@@ -11,7 +11,6 @@ public class ChoixAleatoire implements Strategie {
     @objid ("ac10c713-431d-468b-af66-2ee92e45d8de")
     @Override
     /**
-     * @link Strategie
      * Prendre un choix aleatoire parmis les trois
      */
     public Choix DemarrerCoup() {

@@ -14,10 +14,17 @@ public class ChoixCyclique implements Strategie {
      */
     public Choix DemarrerCoup() {
         if(sonChoixPrecedent == Choix.CISEAUX)
+        {
+            sonChoixPrecedent = Choix.PAPIER;
             return Choix.PAPIER;
+        }
         else if(sonChoixPrecedent == Choix.PAPIER)
+        {
+            sonChoixPrecedent = Choix.PIERRE;
             return Choix.PIERRE;
+        }
         else
+            sonChoixPrecedent = Choix.CISEAUX;
             return Choix.CISEAUX;
     }
 

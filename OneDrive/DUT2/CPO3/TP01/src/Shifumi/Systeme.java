@@ -85,7 +85,13 @@ public class Systeme {
                 }
                 
                 // Nommer le bot
-                leJoueur.setNom("Bot");
+                if("Bot".equals(this.player.get(0).getNom()))
+                {
+                    this.player.get(0).setNom("Bot1");
+                    this.player.get(1).setNom("Bot2");
+                }
+                else
+                    leJoueur.setNom("Bot");
         
             }
             else
