@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("c27fecff-36ba-4036-b116-72619f67198f")
 /**
  * Le system gere le deroulement du jeu. Il demarre les parties, affecter les points, determiner et annoncer le gagnant
  */
+@objid ("c27fecff-36ba-4036-b116-72619f67198f")
 public class Systeme {
     @objid ("a811842f-c702-4613-a706-445082a3721c")
     private Integer nbTours;
@@ -25,15 +25,15 @@ public class Systeme {
     @objid ("b402c1bb-29ba-45ad-972f-bc01f5510cec")
     public ComparateurChoix comparateurChoix = new ComparateurChoix();
 
-    @objid ("4c135483-1478-4b52-8fd7-5eca7f98f407")
     /**
      * Annoncer le resultat final du jeu
      */
+    @objid("4c135483-1478-4b52-8fd7-5eca7f98f407")
     public void annoncerGagnant() {
         int leScoreP1 = this.player.get(0).getScore();
         int leScoreP2 = this.player.get(1).getScore();
-        
-        System.out.println("Joueur "+this.player.get(0).getNom()+" remporte "+Integer.toString(leScoreP1)+" points");
+
+        System.out.println("Joueur " + this.player.get(0).getNom() + " remporte " + Integer.toString(leScoreP1) + " points");
         System.out.println("Joueur "+this.player.get(1).getNom()+" remporte "+Integer.toString(leScoreP2)+" points");
         
         if(leScoreP1 > leScoreP2)
@@ -44,10 +44,10 @@ public class Systeme {
             System.out.println("It is a draw!");
     }
 
-    @objid ("1c4f0a5c-a455-40f8-9927-bede541ab2b9")
     /**
      * Demarrer le jeu. Tous les fonctionalites du jeu se trouvent ici
      */
+    @objid ("1c4f0a5c-a455-40f8-9927-bede541ab2b9")
     public void demarrerJeu() {
         //Demander une strategie pour chaque joueur              
         for (int i = 0; i < 2; i++) {
