@@ -125,11 +125,15 @@ public class Systeme {
             System.out.println("Joueur "+this.player.get(1).getNom()+" joue "+this.player.get(1).choix.name());
             
             int leGagnant = this.comparateurChoix.comparerChoix(this.player.get(0).choix, this.player.get(1).choix);    
-            if(leGagnant == 2)
+            if(leGagnant == 2){
                 System.out.println("Match nul");
+                this.player.get(0).setScore(this.player.get(0).getScore()+1);
+                this.player.get(1).setScore(this.player.get(1).getScore()+1);
+            }
+                
             else
             {
-                this.player.get(leGagnant).setScore(this.player.get(leGagnant).getScore()+1);
+                this.player.get(leGagnant).setScore(this.player.get(leGagnant).getScore()+2);
                 System.out.println(this.player.get(leGagnant).getNom()+" gagne");
             }
         }
