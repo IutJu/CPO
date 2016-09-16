@@ -33,8 +33,8 @@ public class Systeme {
         int leScoreP1 = this.player.get(0).getScore();
         int leScoreP2 = this.player.get(1).getScore();
 
-        System.out.println("Joueur " + this.player.get(0).getNom() + " remporte " + Integer.toString(leScoreP1) + " points");
-        System.out.println("Joueur "+this.player.get(1).getNom()+" remporte "+Integer.toString(leScoreP2)+" points");
+        System.out.println("Joueur " + this.player.get(0).getNom() + " remporte avec " + Integer.toString(leScoreP1) + " point(s)");
+        System.out.println("Joueur "+this.player.get(1).getNom()+" remporte avec "+Integer.toString(leScoreP2)+" point(s)");
         
         if(leScoreP1 > leScoreP2)
             System.out.println(this.player.get(0).getNom()+ " emerge victorieux!");
@@ -57,7 +57,7 @@ public class Systeme {
             int choixDuJoueur = 0;
             Scanner reader = new Scanner(System.in);
             while (choixDuJoueur == 0 || choixDuJoueur > 2) {
-                System.out.println("Quel strategie pour le premier joueur?\n\t1.Bot\n\t2.Human");
+                System.out.println("Quelle strategie pour le joueur?\n\t1.Bot\n\t2.Human");
                 choixDuJoueur = reader.nextInt();
             }
         
@@ -66,7 +66,7 @@ public class Systeme {
                 int choixDuBot = 0;
                 Scanner reader1 = new Scanner(System.in);
                 while (choixDuBot == 0 || choixDuBot > 3) {
-                    System.out.println("Quel strategie pour le bot?\n\t1.Coup aleatoire\n\t2.Coup cyclique\n\t3.Coup identique");
+                    System.out.println("Quelle strategie pour le bot?\n\t1.Coup aleatoire\n\t2.Coup cyclique\n\t3.Coup identique");
                     choixDuBot = reader1.nextInt();
                 }
         

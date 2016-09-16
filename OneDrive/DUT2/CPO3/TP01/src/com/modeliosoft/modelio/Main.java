@@ -8,7 +8,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 public class Main {
     @objid ("e32d5a6e-20c4-47c4-b1d6-5e7d020d330d")
     public static void main(final String[] args) {
-        System.out.println("Hello Modelio");
+        System.out.println("Debut de partie");
         
         //Ajouter 2 joueurs
         Joueur leJoueur1 = new Joueur();
